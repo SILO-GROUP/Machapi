@@ -6,14 +6,15 @@ Machapi works by the insertion of modules into an engine designed to run them.
 Once an engine module is created and inserted, Machapi is able to connect to that site and perform various functions.
 
 # Currently supported modules:
+
 plentyoffish.com
 
 
-# Why This Exists
-This was created after I came across a thread from the POF.com owners saying they won't be creating a 
+# Purpose
+Machapi was created after I came across a thread from the POF.com owners saying they won't be creating a 
 server-side API, which hinders 3rd party software development.
 
-Hope it helps some developer somewhere get something neat built.
+I hope it helps some developer somewhere get something neat built.
 
 It's pretty easy to use.  Just create a new POFSession object and its methods drive everything.
 
@@ -32,7 +33,7 @@ pip3 install -r requirements.txt
 After placing the ./Machapi directory in your project, import the Session object from the corresponding engine module:
 
 ```
-from Machapi.Engines.POF_com import Session as POFSession
+from Machapi.Engines.POFv2 import Session as POFSession
 
 # Create a configuration object from a file.
 config = POFSession.Config( config_file_path )
@@ -40,7 +41,7 @@ config = POFSession.Config( config_file_path )
 POFobject = POFSession( config )
 
 # start the session by loggin in.
-POFobject.login( config.username, config.password )
+POFobject.login()
 ```
 
 And you're ready to go.  You'll want to, of course, adapt the config.ini file to your needs and adjust paths where

@@ -1,27 +1,31 @@
 [general-client]
-# Attention users:
-#   Make sure you use a "unique" identifier specific to you so that they can invade your privacy and track you.
-user_agent = "you are not my peers; do not test me."
-
-# You are encouraged not to use these especially as they are generic and should only be used for testing by authorized parties.
-# user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
-# user_agent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.991"
-# user_agent = "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"
+# it's not anyone's business what web browser you use to access a site.  not even that site's.
+user_agent = Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0
 
 [pof-session]
-username = your_username
-password = password
+username = ***********
+password = ***********
 
 [pof-search]
+# your gender
 gender = m
+
+# their gender
 target_gender = f
-min_age = 18
-max_age = 40
-max_distance = 25
-zipcode = 43203
+
+# minimum age
+min_age = **
+
+# maximum age
+max_age = **
+
+# distance from you
+max_distance = **
+
+# zip code for distance radius
+zipcode = *****
+
 # These can be left blank.
-# I will need to create a map as these translate directly into
-# uri parameters on the search.
 interests =
 min_height =
 max_height =
@@ -42,6 +46,7 @@ religion =
 country =
 has_pets =
 
+# placeholders for future releases
 [tindr-session]
 username = your_username
 password = password
@@ -63,6 +68,5 @@ username = your_username
 password = password
 
 [proxy]
-# Don't use this feature because some idiot thinks privacy is hacking
 enabled = false
 proxy = 127.0.0.1:9090

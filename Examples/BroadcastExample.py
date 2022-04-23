@@ -1,22 +1,38 @@
 #!/usr/bin/env python3
 
-import sys
+# ---------------
+# Sample Script
+# ---------------
+# Do not run this.  This is an example script of what you can do with Machapi.
+# This example connects, runs a search based on your config.ini settings, and then
+# sends a message asking the list of people returned if they were born in the city they
+# indicate is the city they are in.
+
+import sys, json
+# import pprint
 sys.path.insert( 0, '..' )
 
 # this will later be a session multiplexer object in a module abstraction library
-from Engines.POF_com import Session as POFSession
+from Engines.POFv2 import Session as POFSession
+
 
 def Main():
-    config = POFSession.Config("config.ini")
+    config = POFSession.Config( "config.ini" )
 
-    testSession = POFSession(config)
+    testSession = POFSession( config )
     testSession.login()
+    for result in testSession.search():
+        result.send_message(
+            "so are you from {0} originally or did you move there?".format(
+                result.details['city']
+            )
+        )
 
-    users = testSession.searchUsers(config, 5, online_only=True)
+    # this call will fetch a user object in json format
+    # user = testSession.get_user( profile_id )
 
-    print("Total Users Found: {0}".format( len(users) ) )
-
-    testSession.broadcastMessage(users, "hey whats up")
+    # this call will tell you about your own user.
+    # pprint.pprint( testSession.my_user )
 
 
 if __name__ == '__main__':

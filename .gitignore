@@ -1,0 +1,4 @@
+.idea/
+Engines/__pycache__
+venv
+Examples/config.ini
