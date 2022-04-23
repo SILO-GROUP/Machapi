@@ -97,3 +97,5 @@ This also applies to users desiring additional features, feature changes, etc.
 
 There are exceptions to this, such as requests to purchase the rights to Machapi.  Those can be delivered to my personal
 email address, punches (dot) chris (at) gmail (dot) com
+
+<3
