@@ -47,25 +47,13 @@ country =
 has_pets =
 
 # placeholders for future releases
-[tindr-session]
-username = your_username
-password = password
+#[tindr-session]
+#username = your_username
+#password = password
 
-[okcupid-session]
-username = your_username
-password = password
-
-[reddit-session]
-username = your_username
-password = password
-
-[stack_overflow-session]
-username = your_username
-password = password
-
-[facebook-session]
-username = your_username
-password = password
+#[facebook-session]
+#username = your_username
+#password = password
 
 [proxy]
 enabled = false
