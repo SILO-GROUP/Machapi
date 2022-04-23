@@ -47,22 +47,14 @@ country =
 has_pets =
 
 # placeholders for future releases
-[tindr-session]
-username = your_username
-password = password
+#[tindr-session]
+#username = your_username
+#password = password
 
-[reddit-session]
-username = your_username
-password = password
+#[facebook-session]
+#username = your_username
+#password = password
 
-[stack_overflow-session]
-username = your_username
-password = password
-
-[facebook-session]
-username = your_username
-password = password
-
-[proxy]
-enabled = false
-proxy = 127.0.0.1:9090
+#[proxy]
+#enabled = false
+#proxy = 127.0.0.1:9090
