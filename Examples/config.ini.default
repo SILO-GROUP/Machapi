@@ -51,10 +51,6 @@ has_pets =
 username = your_username
 password = password
 
-[okcupid-session]
-username = your_username
-password = password
-
 [reddit-session]
 username = your_username
 password = password
