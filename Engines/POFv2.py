@@ -288,8 +288,6 @@ class Session:
             user_obj = self.get_user(user['profileId'])
             yield user_obj
 
-
-
     def get_user( self, profile_id ):
         try:
             profile_api_url = 'https://www.pof.com/apiv1/Profile/{0}'.format( profile_id )
@@ -378,10 +376,13 @@ class Session:
         if response_obj['success'] != True:
             raise Session.POFSessionError( "Could not send message." )
 
-        print( "Message sent to user '{0}'.  {1} messages remaining in quota.".format(
-            profile_id,
-            response_obj['userFirstContactsCapStatus']['remainingAllowedCount']
-        ) )
+        # check if we're the free version or not so we kow whether to report on message limit.
+        if 'userFirstContactsCapStatus' in response_obj:
+            print( "Message sent to user '{0}'.  {1} messages remaining in quota.".format(
+                profile_id,
+                response_obj['userFirstContactsCapStatus']['remainingAllowedCount']
+            ) )
+        else:
+            print( "Message sent to user '{0}'.".format( profile_id ) )
 
-        parsed = json.loads( sent_messages_result.text )
-        return User( parsed, self )
+        time.sleep(1)

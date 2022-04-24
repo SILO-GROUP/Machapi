@@ -19,13 +19,12 @@ from Engines.POFv2 import Session as POFSession
 def Main():
     config = POFSession.Config( "config.ini" )
 
-    testSession = POFSession( config )
-    testSession.login()
-    for result in testSession.search():
-        result.send_message(
-            "so are you from {0} originally or did you move there?".format(
-                result.details['city']
-            )
+    session_controller = POFSession( config )
+    session_controller.login()
+    for returned_user in session_controller.search():
+        # Send the user a message.
+        returned_user.send_message(
+            "so are you from {0} originally or did you move there?".format( returned_user.details['city'] )
         )
 
     # this call will fetch a user object in json format
